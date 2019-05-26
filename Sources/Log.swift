@@ -31,7 +31,7 @@ struct Log {
     /// Creates a new log with the specified category.
     ///
     /// - Parameter category: The category associated with the messages written to this log.
-    private init(category: String) {
+    init(category: String) {
         systemLog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: category)
     }
     
