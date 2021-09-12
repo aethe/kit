@@ -38,69 +38,69 @@ extension UIStackView {
             stackView.axis = axis
         }
 
-        func align(by alignment: UIStackView.Alignment) -> Self {
+        func align(_ alignment: UIStackView.Alignment) -> Self {
             stackView.alignment = alignment
             return self
         }
 
-        func distribute(by distribution: UIStackView.Distribution) -> Self {
+        func distribute(_ distribution: UIStackView.Distribution) -> Self {
             stackView.distribution = distribution
             return self
         }
 
-        func space(by spacing: CGFloat) -> Self {
+        func space(_ spacing: CGFloat) -> Self {
             stackView.spacing = spacing
             return self
         }
 
-        func inset(by insets: UIEdgeInsets) -> Self {
+        func inset(_ insets: UIEdgeInsets) -> Self {
             stackView.layoutMargins = insets
-            return self.arrangeRelativeToLayoutMargins()
+            return self.relativeToMargins()
         }
 
         func inset(left: CGFloat, right: CGFloat, top: CGFloat, bottom: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: top, left: left, bottom: bottom, right: right))
+            inset(UIEdgeInsets(top: top, left: left, bottom: bottom, right: right))
         }
 
         func inset(all: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: all, left: all, bottom: all, right: all))
+            inset(UIEdgeInsets(top: all, left: all, bottom: all, right: all))
         }
 
         func inset(horizontal: CGFloat, vertical: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: vertical, left: horizontal, bottom: vertical, right: horizontal))
+            inset(UIEdgeInsets(top: vertical, left: horizontal, bottom: vertical, right: horizontal))
         }
 
         func inset(horizontal: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: 0, left: horizontal, bottom: 0, right: horizontal))
+            inset(UIEdgeInsets(top: 0, left: horizontal, bottom: 0, right: horizontal))
         }
 
         func inset(vertical: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: vertical, left: 0, bottom: vertical, right: 0))
+            inset(UIEdgeInsets(top: vertical, left: 0, bottom: vertical, right: 0))
         }
 
         func inset(left: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0))
+            inset(UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0))
         }
 
         func inset(right: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: right))
+            inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: right))
         }
 
         func inset(top: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0))
+            inset(UIEdgeInsets(top: top, left: 0, bottom: 0, right: 0))
         }
 
         func inset(bottom: CGFloat) -> Self {
-            inset(by: UIEdgeInsets(top: 0, left: 0, bottom: bottom, right: 0))
+            inset(UIEdgeInsets(top: 0, left: 0, bottom: bottom, right: 0))
         }
 
-        func arrangeRelativeToLayoutMargins() -> Self {
+        func relativeToMargins() -> Self {
             stackView.insetsLayoutMarginsFromSafeArea = false
             stackView.isLayoutMarginsRelativeArrangement = true
             return self
         }
 
-        func arrangeRelativeToBaseline() -> Self {
+        func relativeToBaseline() -> Self {
             stackView.isBaselineRelativeArrangement = true
             return self
         }
