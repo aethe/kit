@@ -38,8 +38,8 @@ struct CubicBezier {
     private let bDiv3a: Double
     private let pCb: Double
     private let p1y3: Double
-    private let p1yNeg6Addp2y3: Double
-    private let p1y3Subp2y3Add1: Double
+    private let p1yNeg6AddP2y3: Double
+    private let p1y3SubP2y3Add1: Double
 
     init(
         p1x: Double,
@@ -93,8 +93,8 @@ struct CubicBezier {
         // Precalculate some values for finding py.
         let p2y3 = 3 * p2y
         p1y3 = 3 * p1y
-        p1yNeg6Addp2y3 = -2 * p1y3 + p2y3
-        p1y3Subp2y3Add1 = p1y3 - p2y3 + 1
+        p1yNeg6AddP2y3 = -2 * p1y3 + p2y3
+        p1y3SubP2y3Add1 = p1y3 - p2y3 + 1
     }
 
     func sample(at px: Double) -> Double {
@@ -127,7 +127,7 @@ struct CubicBezier {
         // That's the value of an animated parameter at the given time px.
         let tSq = t * t
         let tCb = t * t * t
-        let py = p1y3Subp2y3Add1 * tCb + p1yNeg6Addp2y3 * tSq + p1y3 * t
+        let py = p1y3SubP2y3Add1 * tCb + p1yNeg6AddP2y3 * tSq + p1y3 * t
         return py
     }
 }
